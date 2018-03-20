@@ -3,7 +3,7 @@ $(call inherit-product, device/xiaomi/capricorn/full_capricorn.mk)
 # Inherit some common Bootleggers stuff.
 $(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
-PRODUCT_NAME := dot_capricorn
+PRODUCT_NAME := bootleg_capricorn
 PRODUCT_DEVICE := capricorn
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5s
