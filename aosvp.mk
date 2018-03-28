@@ -1,9 +1,9 @@
 $(call inherit-product, device/xiaomi/capricorn/full_capricorn.mk)
 
-# Inherit some common gzosp stuff.
-$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
+# Inherit some common ViperOS stuff.
+$(call inherit-product, vendor/aosvp/config/common_full_phone.mk)
 
-PRODUCT_NAME := liquid_capricorn
+PRODUCT_NAME := aosvp_capricorn
 PRODUCT_DEVICE := capricorn
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5s
