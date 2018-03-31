@@ -1,1 +1,1 @@
-add_lunch_combo aosvp_capricorn-userdebug
+add_lunch_combo aosp_capricorn-userdebug
