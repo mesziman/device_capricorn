@@ -1,10 +1,13 @@
 $(call inherit-product, device/xiaomi/capricorn/full_capricorn.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/common.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit some common Nitrogen stuff.
+$(call inherit-product, vendor/nitrogen/products/common.mk)
 
-PRODUCT_NAME := aosp_capricorn
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
+PRODUCT_NAME := nitrogen_capricorn
 PRODUCT_DEVICE := capricorn
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5s
