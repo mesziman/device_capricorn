@@ -1,4 +1,5 @@
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,29 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This file is the build configuration for a full Android
-# build for grouper hardware. This cleanly combines a set of
-# device-specific aspects (drivers) with a device-agnostic
-# product configuration (apps).
-#
-
-# Inherit from the common Open Source product configuration
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-# Inherit some common Nitrogen stuff.
-$(call inherit-product, vendor/nitrogen/products/common.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from capricorn device
 $(call inherit-product, device/xiaomi/capricorn/device.mk)
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+# Inherit some common Carbon stuff.
+$(call inherit-product, vendor/carbon/config/common.mk)
 
-# Device identifier. This must come after all inclusions.
-PRODUCT_NAME := nitrogen_capricorn
+# Inherit Carbon GSM telephony parts
+ $(call inherit-product, vendor/carbon/config/gsm.mk)
+ 
+PRODUCT_NAME := carbon_capricorn
 PRODUCT_DEVICE := capricorn
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5s
