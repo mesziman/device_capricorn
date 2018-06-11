@@ -23,10 +23,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/capricorn/device.mk)
 
 # Inherit some common DU stuff.
-TARGET_ARCH := arm64
-TARGET_DENSITY := xxhdpi
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_ARCORE := true
 $(call inherit-product, vendor/du/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
@@ -40,6 +36,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="capricorn" \
     PRODUCT_NAME="capricorn" \
     PRIVATE_BUILD_DESC="capricorn-user 6.0.1 MXB48T V8.2.4.0.MAGCNDL release-keys"
-    BUILD_FINGERPRINT := "Xiaomi/capricorn/capricorn:6.0.1/MXB48T/V8.2.4.0.MAGCNDL:user/release-keys"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := "Xiaomi/capricorn/capricorn:6.0.1/MXB48T/V8.2.4.0.MAGCNDL:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
